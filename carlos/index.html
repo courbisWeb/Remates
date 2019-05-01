@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--jquery-->
+  <script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous">    
+  </script>
+  <!--fin jquery-->
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Montez|Pathway+Gothic+One" rel="stylesheet">
+    <!--Inicio Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--Fin Bootstrap-->
+  </head>
+  <body>
+    <div class="contenedor">
+
+      <header>
+        <h1 class="title">Remates Valderas</h1>
+      </header>
+      <div class="login">
+        <article class="fondo">
+          <img src="img/men.jpg" alt="User">
+          <h3>Inicio de Sesión</h3>
+          <form id="formulario" method="post">
+            <span class="icon-user"></span><input class="inp form-control" type="text" name="usuario" value=""><br>
+            <span class="icon-key"></span><input class="inp form-control" type="password" name="contrasena" value=""><br>
+            <input class="boton" type="POST" name="inicio" value="Iniciar Sesión" onclick="llamaBoton()">
+            <div id="resultado"></div>
+          </form>
+        </article>
+      </div>
+
+    </div>
+  </body>
+</html>
+
+<script>
+function llamaBoton() {
+              
+              var url = "comprobar.php";
+              $('#resultado').html('<div class="loading"><img src="loader.gif" alt="loading" /></div>');
+              $.ajax({
+                type:"POST",
+                url:url,
+                data: $("#formulario").serialize(),
+                success: function(data){
+                  $("#resultado").fadeIn(1000).html(data);
+                 }
+                  });
+                   return false;
+      }
+
+  </script>
