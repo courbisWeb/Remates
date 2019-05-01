@@ -1,0 +1,66 @@
+h3
+{
+
+	text-align: center;
+
+}
+
+.apartado
+{
+
+	margin-top: 20px;
+
+}
+
+.apartado p
+{
+
+	text-align: right;
+
+}
+
+.glosa
+{
+
+	float: left;
+
+}
+
+#idTextoDescripcion
+{
+
+	width: 100%;
+	height: 200px;
+	resize: none;
+	margin-left: 0px;
+
+}
+
+#divArchivos
+{
+
+	border-left: 1px solid #212529;
+
+}
+
+.cajaInput
+{
+
+	float: left;
+
+}
+
+#btnEnviar
+{
+	padding-top: 30px;
+	border-top: 1px solid #212529;
+
+}
+
+#cabeceraForm
+{
+
+	border-bottom: 1px solid #212529;	
+	margin-bottom: 30px;
+
+}
