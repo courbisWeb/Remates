@@ -16,7 +16,7 @@ $descRemate		=	$_GET['descRemate'];
 $rs	=	mysqli_query($conn, "SELECT 	REMATE.AGREGA_DET_REMATE($idRemate ,'$glsRemate','$direccionRemate','$fecRemate','$descRemate');");
 /*fin query*/
 mysqli_close($conn);
-header('Location: http://localhost/proyectoRemate/Remates/panel_administrador/home.php');
+header('Location: http://localhost/Remates/panel_administrador/home.php');
 
 
 
