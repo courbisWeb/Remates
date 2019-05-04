@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	console.log("Jquery charged!!")
+	console.log("Jquery charged!!");
+
+
 
 var url;
 var glsRemate;
@@ -25,9 +27,13 @@ var idRemate;
     }  
 })(jQuery); 
 
+	var a = $.get("Remate");
+
+	$("#idRemate").val(a)
+
 $("#btnPrueba").click(function(){
 
-	var a = $.get("idRemate");
+	var a = $.get("Remate");
 	var b = $.get("other");
 
 	glsRemate 		=	$("#txtGlosaRemate").val();	
@@ -47,33 +53,6 @@ $("#btnCancelar").click(function(){
 	$(location).attr('href',url);
 });
 
-$("#btnGuardar").click(function(){
-	getRemate = $.get("idRemate");
-	url 		= 	"home.html"; 
-	if(getRemate==1){
-		idRemate="#contieneRemate1"
-	}
-	else
-	if(getRemate==2){
-		idRemate="#contieneRemate2"
-	}
-	else
-	if(getRemate==3){
-		idRemate="#contieneRemate3"
-	}
-	else
-	if(getRemate==4){
-		idRemate="#contieneRemate4"
-	}
-	else
-	if(getRemate==5){
-		idRemate="#contieneRemate5"
-	}		
-
-	$(idRemate).append("<strong>Hello</strong>");	
-
-	$(location).attr('href',url);
-});
 
 
 

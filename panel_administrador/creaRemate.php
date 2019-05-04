@@ -48,9 +48,9 @@
 
 			<hr>
 		
-		<form action="">
+		<form action="http://localhost/proyectoRemate/Remates/BD/ModificaRemate.php">
 			<div id="cuerpo" class="row">
-				
+				<input type="hidden" id="idRemate" name="idRemate">
 				<div id="cabeceraForm" class="col-12">
 					<div class="col-4"></div>
 					<div class="col-4">
@@ -64,7 +64,7 @@
 						<p>Glosa de remate :</p>	
 					</div>
 					<div class="col-9">
-						<input type="text" id="txtGlosaRemate">
+						<input type="text" name ="glsRemate" id="txtGlosaRemate">
 					</div>				
 					</div>
 
@@ -73,7 +73,7 @@
 						<p>Dirección :</p>	
 					</div>
 					<div class="col-9">
-						<input type="text" id="txtDireccionRemate">
+						<input type="text" name="direccionRemate" id="txtDireccionRemate">
 					</div>				
 					</div>
 
@@ -82,7 +82,7 @@
 							<p>Fecha Remate   :</p>	
 						</div>		
 						<div class="col-9">
-							<input type="datetime-local" id="txtFechaRemate">
+							<input type="datetime-local" name="fecRemate" id="txtFechaRemate">
 						</div>
 					</div>
 
@@ -101,7 +101,7 @@
 							<p>Descripción	   :</p>		
 						</div>
 						<div class="col-9"></div>
-						<textarea name="textoDescripcion" id="idTextoDescripcion"></textarea>
+						<textarea name="descRemate" id="idTextoDescripcion"></textarea>
 					</div>
 			
 			
@@ -118,7 +118,7 @@
 			</div>	
 			<br>
 			<div id="btnEnviar"class="col-12" style="text-align: center;">
-				<input type="button" id="btnGuardar" value="Guardar" class="btn btn-primary">	
+				<input type="submit" id="btnGuardar" value="Guardar" class="btn btn-primary">	
 				<input type="button" id="btnCancelar" value="Cancelar" class="btn btn-primary">	
 				<input type="button" id="btnPrueba" value="Prueba" class="btn btn-primary">	
 			</div>			
@@ -128,7 +128,6 @@
 			<h4>Footer</h4>
 		</div>
 	</div>
-
 
 </body>
 </html>
