@@ -123,6 +123,47 @@
 	</div>
 </div>
 
+<?php 
+
+include('../BD/Conexion.php');
+
+$query = "SELECT	*
+FROM	REMATE.REM_DET_REMATE;";
+
+// Ejecutas las consulta
+$rs = mysqli_query($conn,$query);
+
+// Check resultado
+// Si hubo un error mostras cual es
+if (!$rs) {
+$message = 'Invalid query: ' . mysql_error() . " ";
+$message .= 'Whole query: ' . $query;
+die($message);
+}
+// Use result
+//Aca recorres todas las filas y te va devolviendo el resultado
+while ($row	=	mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+$idRemate 	=	$row['ID_DETREMATE'];
+$glsRemate 	=	$row['GLS_DETREMATE'];
+$dirRemate 	=	$row['DIR_DETREMATE'];
+$fecRemate 	= 	$row['FEC_DETREMATE'];
+$desRemate 	=	$row['DES_DETREMATE'];
+$flgRemate 	=	$row['FLG_CONTIENE'];
+
+if ($flgRemate>0) {
+	echo "idRemate = ".$idRemate." contiene DATOS!!";
+	echo "<br>";
+}
+
+}
+
+//Liberas el resultado
+mysqli_free_result($rs);
+
+
+//Cerras coneccion
+mysqli_close($conn);
+?>
 
 </body>
 </html>
