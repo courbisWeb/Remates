@@ -53,76 +53,6 @@
 
 	<div id="cuerpo" class="row col-12">
 
-	
-		<div id="contieneRemate1" class="agregaRemate contieneRemate col-2">	
-			<i class="fas fa-plus fa-5x"></i>
-			<hr>
-			<p>remate 1</p>
-		</div>	
-
-		<div id="contieneRemate2" class="agregaRemate contieneRemate col-2">
-			
-			<i class="fas fa-plus fa-5x"></i>
-			<hr>
-			<p>remate 2</p>
-		</div>	
-
-		
-		<div id="contieneRemate3" class="agregaRemate contieneRemate col-2">
-			
-			<i class="fas fa-plus fa-5x"></i>
-			<hr>
-			<p>remate 3</p>
-		</div>	
-
-		
-		<div id="contieneRemate4" class="agregaRemate contieneRemate col-2">
-			
-			<i class="fas fa-plus fa-5x"></i>
-			<hr>
-			<p>remate 4</p>
-		</div>	
-
-		
-		<div id="contieneRemate5" class="agregaRemate contieneRemate col-2">
-			
-			<i class="fas fa-plus fa-5x"></i>
-			<hr>
-			<p>remate 5</p>
-		</div>	
-
-		<div id="eliminarRemate1" class="eliminar col-2">	
-			<i class="fas fa-trash-alt fa-2x"></i>
-		</div>	
-
-		<div id="eliminarRemate2" class="eliminar col-2">
-			<i class="fas fa-trash-alt fa-2x"></i>
-		</div>	
-
-		
-		<div id="eliminarRemate3" class="eliminar col-2">		
-			<i class="fas fa-trash-alt fa-2x"></i>
-		</div>	
-
-		
-		<div id="eliminarRemate4" class="eliminar col-2">
-			<i class="fas fa-trash-alt fa-2x"></i>
-		</div>	
-
-		
-		<div id="eliminarRemate5" class="eliminar col-2">
-			<i class="fas fa-trash-alt fa-2x"></i>
-		</div>
-
-	</div>
-
-	<hr>
-
-	<div id="pie" class="row col-12">
-		<h4>Footer</h4>
-	</div>
-</div>
-
 <?php 
 
 include('../BD/Conexion.php');
@@ -151,11 +81,25 @@ $desRemate 	=	$row['DES_DETREMATE'];
 $flgRemate 	=	$row['FLG_CONTIENE'];
 
 if ($flgRemate>0) {
-	echo "idRemate = ".$idRemate." contiene DATOS!!";
-	echo "<br>";
+	/*echo "idRemate = ".$idRemate." contiene DATOS!!";
+	echo "<br>";*/
+
+		echo "<div id='contieneRemate".$idRemate."' class='agregaRemate contieneRemate col-2'>";
+		echo	"<i class='fas fa-plus fa-5x'></i>";
+		echo	"<hr>";
+		echo	"<p>".$glsRemate."</p>";
+		echo "</div>";	
+}
+else
+{
+		echo "<div id='contieneRemate".$idRemate."' class='agregaRemate contieneRemate col-2'>";
+		echo	"<i class='fas fa-plus fa-5x'></i>";
+		echo	"<hr>";
+		echo	"<p>remate ".$idRemate."</p>";
+		echo "</div>";	
+}
 }
 
-}
 
 //Liberas el resultado
 mysqli_free_result($rs);
@@ -164,6 +108,39 @@ mysqli_free_result($rs);
 //Cerras coneccion
 mysqli_close($conn);
 ?>
+
+		<div id="eliminarRemate1" class="eliminar col-2">	
+			<i class="fas fa-trash-alt fa-2x"></i>
+		</div>	
+
+		<div id="eliminarRemate2" class="eliminar col-2">
+			<i class="fas fa-trash-alt fa-2x"></i>
+		</div>	
+
+		
+		<div id="eliminarRemate3" class="eliminar col-2">		
+			<i class="fas fa-trash-alt fa-2x"></i>
+		</div>	
+
+		
+		<div id="eliminarRemate4" class="eliminar col-2">
+			<i class="fas fa-trash-alt fa-2x"></i>
+		</div>	
+
+		
+		<div id="eliminarRemate5" class="eliminar col-2">
+			<i class="fas fa-trash-alt fa-2x"></i>
+		</div>
+
+	</div>
+	<hr>
+
+	<div id="pie" class="row col-12">
+		<h4>Footer</h4>
+	</div>
+</div>
+
+
 
 </body>
 </html>
