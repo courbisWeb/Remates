@@ -100,7 +100,6 @@ else
 }
 }
 
-
 //Liberas el resultado
 mysqli_free_result($rs);
 

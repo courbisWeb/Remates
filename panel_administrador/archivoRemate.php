@@ -27,10 +27,11 @@
 	<!--Archivos externos-->
 	<link rel="stylesheet" type="text/css" href="../style/home.css">
 	<link rel="stylesheet" type="text/css" href="style/creaRemate.css">
+	<link rel="stylesheet" type="text/css" href="style/archivoRemate.css">
 	<script type="text/javascript" src="js/creaRemate.js"></script>
 	<!--Fin Archivos externos-->
 	<meta charset="utf-8">
-	<title>Proyecto Remates</title>
+	<title>Proyecto Remates(Archivos)</title>
 </head>
 <body>
 
@@ -41,7 +42,7 @@
 			<div class="col-4">
 			</div>
 			<div class="col-4">
-				<h1>Mantenedor de remates</h1>
+				<h1>Archivos del remate</h1>
 			</div>
 			<div class="col-4"></div>
 		</div>
@@ -54,14 +55,14 @@
 				<div id="cabeceraForm" class="col-12">
 					<div class="col-4"></div>
 					<div class="col-4">
-						<h3>Nuevo Remate</h3>
+						<h3>Datos del archivo</h3>
 					</div>
 					<div class="col-4"></div>
 				</div>
 				<div class="col-6">
 					<div class="col-12 apartado">
 					<div class="col-4 glosa">
-						<p>Glosa de remate :</p>	
+						<p>Nombre:</p>	
 					</div>
 					<div class="col-12">
 						<input type="text" class="form-control" name ="glsRemate" id="txtGlosaRemate">
@@ -70,58 +71,29 @@
 
 					<div class="col-12 apartado">
 					<div class="col-4 glosa">
-						<p>Dirección :</p>	
+						<p>Archivo:</p>	
 					</div>
 					<div class="col-12">
-						<input type="text" class="form-control" name="direccionRemate" id="txtDireccionRemate">
+												    <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+  </div>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="inputGroupFile01"
+      aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+  </div>
+</div>
 					</div>				
 					</div>
-					<div class="container">
-
-						<div class="row">
-							
-							<div class="col-6 apartado">
-							<div class="col-9 glosa">
-								<p>Fecha Remate:</p>	
-							</div>		
-							<div class="">
-								
-								<input type="datetime-local" class="form-control" name="fecRemate" id="txtFechaRemate">
-
-							</div>
-						</div>	
-						<div id="apartadoArchivo" class="col-6 apartado">
-							<div class="col-9 glosa">
-								<p style="text-align: left;">Archivos:</p>	
-							</div>	
-							<div class="">
-								<input type="button" id="btnVerArchivos" value="Ver Archivos" class="btn btn-primary" name="">
-							</div>
-							
-
-						</div>
-
-
-						</div>
-						
-	
-
-					</div>
-
-
-
-
-
-
 				</div>
-				<div class="col-6">
+				<div id="divContieneArchivos" class="col-6">
 					
 					<div class="col-12 apartado">
 						<div class="col-4">
-							<p>Descripción	   :</p>		
+							<p>Archivos Adjuntos:</p>		
 						</div>
 						<div class="col-12"></div>
-						<textarea name="descRemate" class="form-control" id="idTextoDescripcion"></textarea>
 					</div>
 
 				</div>
@@ -129,9 +101,8 @@
 			</div>	
 			<br>
 			<div id="btnEnviar"class="col-12" style="text-align: center;">
-				<input type="submit" id="btnGuardar" value="Guardar" class="btn btn-primary">	
-				<input type="button" id="btnCancelar" value="Cancelar" class="btn btn-primary">	
-				<input type="button" id="btnPrueba" value="Prueba" class="btn btn-primary">	
+				<input type="submit" id="btnAgregar" value="Agregar" class="btn btn-primary">	
+				<input type="button" id="btnVolver" value="Volver" class="btn btn-primary">	
 			</div>			
 		</form>		
 		<hr>	

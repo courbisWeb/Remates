@@ -49,11 +49,18 @@ $("#btnPrueba").click(function(){
 });
 
 $("#btnCancelar").click(function(){
-	url = "home.html"; 
+	url = "home.php"; 
 	$(location).attr('href',url);
 });
 
+$("#btnMas").click(function(){
+	window.location.reload(true);
+});
 
+$("#btnVerArchivos").click(function(){
+	url = "archivoRemate.php"; 
+	$(location).attr('href',url);
+});
 
 
 });
