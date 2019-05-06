@@ -12,7 +12,8 @@ $idRemate 		=	$_GET['idRemate'];
 $rs	=	mysqli_query($conn, "SELECT	REMATE.BORRA_DET_REMATE($idRemate);");
 /*fin query*/
 mysqli_close($conn);
-header('Location: http://localhost/proyectoRemate/Remates/panel_administrador/home.php');
+header('Location: http://localhost/Remates/panel_administrador/home.php');
+?>
 
 
 

@@ -37,27 +37,27 @@ $("#contieneRemate5").click(function(){
 });
 
 $("#eliminarRemate1").click(function(){
-	url = "http://localhost/proyectoRemate/Remates/BD/EliminaRemate.php?idRemate=1"; 
+	url = "http://localhost/Remates/BD/EliminaRemate.php?idRemate=1"; 
 	$(location).attr('href',url);
 });
 
 $("#eliminarRemate2").click(function(){
-	url = "http://localhost/proyectoRemate/Remates/BD/EliminaRemate.php?idRemate=2"; 
+	url = "http://localhost/Remates/BD/EliminaRemate.php?idRemate=2"; 
 	$(location).attr('href',url);
 });
 
 $("#eliminarRemate3").click(function(){
-	url = "http://localhost/proyectoRemate/Remates/BD/EliminaRemate.php?idRemate=3"; 
+	url = "http://localhost/Remates/BD/EliminaRemate.php?idRemate=3"; 
 	$(location).attr('href',url);
 });
 
 $("#eliminarRemate4").click(function(){
-	url = "http://localhost/proyectoRemate/Remates/BD/EliminaRemate.php?idRemate=4"; 
+	url = "http://localhost/Remates/BD/EliminaRemate.php?idRemate=4"; 
 	$(location).attr('href',url);
 });
 
 $("#eliminarRemate5").click(function(){
-	url = "http://localhost/proyectoRemate/Remates/BD/EliminaRemate.php?idRemate=5"; 
+	url = "http://localhost/Remates/BD/EliminaRemate.php?idRemate=5"; 
 	$(location).attr('href',url);
 });
 

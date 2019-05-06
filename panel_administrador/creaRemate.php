@@ -48,7 +48,7 @@
 
 			<hr>
 		
-		<form action="http://localhost/proyectoRemate/Remates/BD/ModificaRemate.php">
+		<form action="http://localhost/Remates/BD/ModificaRemate.php">
 			<div id="cuerpo" class="row">
 				<input type="hidden" id="idRemate" name="idRemate">
 				<div id="cabeceraForm" class="col-12">
