@@ -58,8 +58,10 @@ $("#btnMas").click(function(){
 });
 
 $("#btnVerArchivos").click(function(){
-	url = "archivoRemate.php"; 
-	$(location).attr('href',url);
+	var a = $.get("Remate");
+
+	url = "archivoRemate.php?Remate="+a; 
+	window.open(url,'_blank');
 });
 
 

@@ -79,13 +79,19 @@ $dirRemate 	=	$row['DIR_DETREMATE'];
 $fecRemate 	= 	$row['FEC_DETREMATE'];
 $desRemate 	=	$row['DES_DETREMATE'];
 $flgRemate 	=	$row['FLG_CONTIENE'];
+$imgRemate	=	$row['RUTA_IMGDETREMATE'];
 
 if ($flgRemate>0) {
 	/*echo "idRemate = ".$idRemate." contiene DATOS!!";
 	echo "<br>";*/
 
 		echo "<div id='contieneRemate".$idRemate."' class='agregaRemate contieneRemate col-2'>";
-		echo	"<i class='fas fa-plus fa-5x'></i>";
+		if ($imgRemate!=""&&$imgRemate!=null) {
+			echo	"<img class='imgRemate' src='../BD/archivos/imgRemate/".$imgRemate."'>";
+		}
+		else{
+			echo	"<i class='fas fa-plus fa-5x'></i>";
+		}		
 		echo	"<hr>";
 		echo	"<p>".$glsRemate."</p>";
 		echo "</div>";	
@@ -95,7 +101,7 @@ else
 		echo "<div id='contieneRemate".$idRemate."' class='agregaRemate contieneRemate col-2'>";
 		echo	"<i class='fas fa-plus fa-5x'></i>";
 		echo	"<hr>";
-		echo	"<p>remate ".$idRemate."</p>";
+		echo	"<p>Nuevo Remate</p>";
 		echo "</div>";	
 }
 }
@@ -135,7 +141,6 @@ mysqli_close($conn);
 	<hr>
 
 	<div id="pie" class="row col-12">
-		<h4>Footer</h4>
 	</div>
 </div>
 

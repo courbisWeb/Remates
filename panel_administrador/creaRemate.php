@@ -48,7 +48,7 @@
 
 			<hr>
 		
-		<form action="http://localhost/Remates/BD/ModificaRemate.php">
+		<form action="http://localhost/Remates/BD/ModificaRemate.php" method="POST" enctype="multipart/form-data">
 			<div id="cuerpo" class="row">
 				<input type="hidden" id="idRemate" name="idRemate">
 				<div id="cabeceraForm" class="col-12">
@@ -58,6 +58,131 @@
 					</div>
 					<div class="col-4"></div>
 				</div>
+
+				<?php 
+
+				include('../BD/Conexion.php');
+
+				$rem 	=	$_GET['Remate'];
+
+				$query = "SELECT	*
+				FROM	REMATE.REM_DET_REMATE
+				WHERE 	ID_DETREMATE	=	$rem;";
+
+				// Ejecutas las consulta
+				$rs = mysqli_query($conn,$query);
+
+				// Check resultado
+				// Si hubo un error mostras cual es
+				if (!$rs) {
+				$message = 'Invalid query: ' . mysql_error() . " ";
+				$message .= 'Whole query: ' . $query;
+				die($message);
+				}
+				// Use result
+				//Aca recorres todas las filas y te va devolviendo el resultado
+				while ($row	=	mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+				$idRemate 	=	$row['ID_DETREMATE'];
+				$glsRemate 	=	$row['GLS_DETREMATE'];
+				$dirRemate 	=	$row['DIR_DETREMATE'];
+				$fecRemate 	= 	$row['FEC_DETREMATE'];
+				$desRemate 	=	$row['DES_DETREMATE'];
+				$flgRemate 	=	$row['FLG_CONTIENE'];
+
+				echo"<div class='col-6'>";
+				//glsRemate
+
+					echo "<div class='container'>";
+					
+						echo "<div class='row'>";				
+					echo"<div class='col-6 apartado'>";
+						echo "<div class='col-9 glosa'>";
+							echo "<p>T&iacutetulo Remate :</p>";	
+						echo "</div>";
+						echo "<div class='col-12'>";
+							echo "<input type='text' value ='".$glsRemate."' class='form-control' name ='glsRemate' id='txtGlosaRemate'>";
+						echo "</div>";				
+					echo "</div>";
+				//Fin glsRemate
+
+				//Imagen de Remate
+					echo"<div id='divImagenRemate' class='col-6 apartado'>";
+						echo "<div class='col-9 glosa'>";
+							echo "<p>Imagen remate :</p>";	
+						echo "</div>";
+						echo "<div class='col-12'>";
+							echo "<input type='file'  name ='imgRemate' id='txtGlosaRemate'>";
+						echo "</div>";				
+					echo "</div>";
+				//Fin Imagen de Remate	
+
+					echo "</div>";
+					echo "</div>";
+
+				//Direccion		
+					echo "<div class='col-12 apartado'>";
+						echo "<div class='col-4 glosa'>";
+							echo "<p>Direcci&oacuten :</p>";	
+						echo "</div>";
+						echo "<div class='col-12'>";
+							echo "<input type='text' value='".$dirRemate."' class='form-control' name='direccionRemate' id='txtDireccionRemate'>";
+						echo "</div>";				
+					echo "</div>";
+				//Fin Direccion	
+
+
+					echo "<div class='container'>";
+					
+						echo "<div class='row'>";
+					//Fecha		
+							echo "<div class='col-6 apartado'>";
+								echo "<div class='col-9 glos'>";
+									echo "<p>Fecha Remate:</p>	";
+								echo "</div>";		
+								echo "<div class=''>";
+									echo "<input type='datetime-local' value='".$fecRemate."'  class='form-control' name='fecRemate' id='txtFechaRemate'>";
+								echo "</div>";
+							echo "</div>";	
+					//Fin Fecha
+							
+					//Archivos			
+							echo "<div id='apartadoArchivo' class='col-6 apartado'>";
+								echo "<div class='col-9 glosa'>";
+									echo "<p style='text-align: left;'>Archivos:</p>";	
+								echo "</div>";	
+								echo "<div class=''>";
+									echo "<input type='button' id='btnVerArchivos' value='Ver Archivos' class='btn btn-primary' name=''>";
+								echo "</div>";
+							echo "</div>";
+					//Fin Archivos					
+
+						echo "</div>";
+
+					echo "</div>";
+
+				echo "</div>";
+				echo "<div class='col-6'>";
+					
+					echo "<div class='col-12 apartado'>";
+						echo "<div class='col-4'>";
+							echo "<p>Descripción	   :</p>";		
+						echo "</div>";
+						echo "<div class='col-12'></div>";
+						echo "<textarea name='descRemate' class='form-control' id='idTextoDescripcion'>".$desRemate."</textarea>";
+					echo "</div>";
+
+				echo "</div>";
+				
+				}
+
+				//Liberas el resultado
+				mysqli_free_result($rs);
+
+
+				//Cerras coneccion
+				mysqli_close($conn);
+				?>
+<!--
 				<div class="col-6">
 					<div class="col-12 apartado">
 					<div class="col-4 glosa">
@@ -125,18 +250,17 @@
 					</div>
 
 				</div>
+			-->
 
 			</div>	
 			<br>
 			<div id="btnEnviar"class="col-12" style="text-align: center;">
-				<input type="submit" id="btnGuardar" value="Guardar" class="btn btn-primary">	
+				<input type="submit" name="sbmtGuardar" id="btnGuardar" value="Guardar" class="btn btn-primary">	
 				<input type="button" id="btnCancelar" value="Cancelar" class="btn btn-primary">	
-				<input type="button" id="btnPrueba" value="Prueba" class="btn btn-primary">	
 			</div>			
 		</form>		
 		<hr>	
 		<div id="pie" class="row col-12">
-			<h4>Footer</h4>
 		</div>
 	</div>
 

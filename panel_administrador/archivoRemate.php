@@ -29,6 +29,7 @@
 	<link rel="stylesheet" type="text/css" href="style/creaRemate.css">
 	<link rel="stylesheet" type="text/css" href="style/archivoRemate.css">
 	<script type="text/javascript" src="js/creaRemate.js"></script>
+	<script type="text/javascript" src="js/archivoRemate.js"></script>
 	<!--Fin Archivos externos-->
 	<meta charset="utf-8">
 	<title>Proyecto Remates(Archivos)</title>
@@ -49,7 +50,7 @@
 
 			<hr>
 		
-		<form action="http://localhost/proyectoRemate/Remates/BD/ModificaRemate.php">
+		<form action="http://localhost/Remates/BD/GuardaArchivoRemate.php" method="POST" enctype="multipart/form-data">
 			<div id="cuerpo" class="row">
 				<input type="hidden" id="idRemate" name="idRemate">
 				<div id="cabeceraForm" class="col-12">
@@ -65,7 +66,16 @@
 						<p>Nombre:</p>	
 					</div>
 					<div class="col-12">
-						<input type="text" class="form-control" name ="glsRemate" id="txtGlosaRemate">
+						<input type="text" class="form-control" name ="glsArchivoRemate" id="txtGlosaRemate">
+					</div>				
+					</div>
+
+					<div class="col-12 apartado">
+					<div class="col-4 glosa">
+						<p>Descripci&oacuten:</p>	
+					</div>
+					<div class="col-12">
+						<input type="text" class="form-control" name ="descArchivoRemate" id="txtGlosaRemate">
 					</div>				
 					</div>
 
@@ -74,16 +84,7 @@
 						<p>Archivo:</p>	
 					</div>
 					<div class="col-12">
-												    <div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-  </div>
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile01"
-      aria-describedby="inputGroupFileAddon01">
-    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-  </div>
-</div>
+						<input type="file" class="form-control"  name="archivoCarga">
 					</div>				
 					</div>
 				</div>
@@ -93,7 +94,65 @@
 						<div class="col-4">
 							<p>Archivos Adjuntos:</p>		
 						</div>
-						<div class="col-12"></div>
+						<div class="col-12">
+							
+							<?php 
+
+								include('../BD/Conexion.php');
+
+								$idRemate	=	$_GET['Remate'];
+
+								$query = "	SELECT 	ID_ARCHIVOREMATE,
+													NOM_ARCHIVOREMATE,
+											        DES_ARCHIVOREMATE,
+											        URL_ARCHIVOREMATE,
+											        TIP_ARCHIVOREMATE,
+											        SIZ_ARCHIVOREMATE
+											FROM	REMATE.REM_ARCHIVO_REMATE
+											WHERE	ID_DETREMATE	=   $idRemate; ";
+
+								// Ejecutas las consulta
+								$rs = mysqli_query($conn,$query);
+
+								// Check resultado
+								// Si hubo un error mostras cual es
+								if (!$rs) {
+								$message = 'Invalid query: ' . mysql_error() . " ";
+								$message .= 'Whole query: ' . $query;
+								die($message);
+								}
+								// Use result
+								//Aca recorres todas las filas y te va devolviendo el resultado
+								while ($row	=	mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+								$idArchivoRemate 	=	$row['ID_ARCHIVOREMATE'];
+								$nomArchivoRemate 	=	$row['NOM_ARCHIVOREMATE'];
+								$desArchivoRemate 	=	$row['DES_ARCHIVOREMATE'];
+								$urlArchivoRemate 	= 	$row['URL_ARCHIVOREMATE'];
+								$tipArchivoRemate 	=	$row['TIP_ARCHIVOREMATE'];
+								$sizArchivoRemate 	=	$row['SIZ_ARCHIVOREMATE'];
+
+								if ($tipArchivoRemate=="image/png") {
+									echo "<div style='float:left;' class='col-3'>";
+									echo "<div class='col-12'>";
+									echo "<a href='../BD/archivos/".$urlArchivoRemate."'><i class='fas fa-image fa-5x'></i></a>";
+									echo "</div>";
+									echo "<div class='col-12'>";
+									echo "<p>".$nomArchivoRemate."</p>";
+									echo "</div>";
+									echo "</div>";
+									
+								}
+								}
+
+								//Liberas el resultado
+								mysqli_free_result($rs);
+
+
+								//Cerras coneccion
+								mysqli_close($conn);
+							?>
+
+						</div>
 					</div>
 
 				</div>
@@ -101,7 +160,7 @@
 			</div>	
 			<br>
 			<div id="btnEnviar"class="col-12" style="text-align: center;">
-				<input type="submit" id="btnAgregar" value="Agregar" class="btn btn-primary">	
+				<input type="submit" name="sbmtArchivo" id="btnAgregar" value="Agregar" class="btn btn-primary">	
 				<input type="button" id="btnVolver" value="Volver" class="btn btn-primary">	
 			</div>			
 		</form>		

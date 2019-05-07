@@ -1,8 +1,8 @@
 <?php
 
 $dbhost		=	'127.0.0.1';
-$dbuser		=	'carlos';
-$dbpass		=	'IuijH3CavZSZZ7PJ';
+$dbuser		=	'courbis';
+$dbpass		=	'';
 $database	=	'REMATE';
 $conn		=	mysqli_connect($dbhost, $dbuser, $dbpass, $database);
 if (! $conn) 
