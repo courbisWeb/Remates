@@ -1,7 +1,7 @@
 <?php
 
 $dbhost		=	'127.0.0.1';
-$dbuser		=	'courbis';
+$dbuser		=	'root';
 $dbpass		=	'';
 $database	=	'REMATE';
 $conn		=	mysqli_connect($dbhost, $dbuser, $dbpass, $database);

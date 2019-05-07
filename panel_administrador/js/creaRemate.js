@@ -64,5 +64,13 @@ $("#btnVerArchivos").click(function(){
 	window.open(url,'_blank');
 });
 
+$("#customFile").change(function(){
+	var valor	=	$("#customFile").val();
+	valor = valor.split('\\');
+	var nomArchivo	=	valor[valor.length-1];
+	$("#lblInput").html('');
+	$("#lblInput").append(nomArchivo);
+	//$("#lblInput").value();
+});
 
 });

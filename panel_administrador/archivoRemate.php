@@ -79,20 +79,24 @@
 					</div>				
 					</div>
 
-					<div class="col-12 apartado">
+					<div class="row col-12 apartado">
 					<div class="col-4 glosa">
 						<p>Archivo:</p>	
 					</div>
 					<div class="col-12">
-						<input type="file" class="form-control"  name="archivoCarga">
+						<div class='col-12 custom-file'>
+							<input type='file' name ='archivoCarga' class='custom-file-input' id='customFile' onchange=''>
+							<label class='custom-file-label' id='lblInput' for='customFile'></label>
+							</div>		
+						<!--<input type="file" class=""  name="archivoCarga">-->
 					</div>				
 					</div>
 				</div>
 				<div id="divContieneArchivos" class="col-6">
 					
-					<div class="col-12 apartado">
-						<div class="col-4">
-							<p>Archivos Adjuntos:</p>		
+					<div style="text-align: center;" class="col-12 apartado">
+						<div class="col-12">
+							<p style="text-align: center;">Archivos Adjuntos:</p>		
 						</div>
 						<div class="col-12">
 							
@@ -142,6 +146,47 @@
 									echo "</div>";
 									
 								}
+								elseif ($tipArchivoRemate=="application/pdf") {
+									echo "<div style='float:left;' class='col-3'>";
+									echo "<div class='col-12'>";
+									echo "<a href='../BD/archivos/".$urlArchivoRemate."'><i class='fas fa-file-pdf fa-5x'></i></a>";
+									echo "</div>";
+									echo "<div class='col-12'>";
+									echo "<p>".$nomArchivoRemate."</p>";
+									echo "</div>";
+									echo "</div>";
+								}
+								elseif ($tipArchivoRemate=="application/msword") {
+									echo "<div style='float:left;' class='col-3'>";
+									echo "<div class='col-12'>";
+									echo "<a href='../BD/archivos/".$urlArchivoRemate."'><i class='fas fa-file-word fa-5x'></i></a>";
+									echo "</div>";
+									echo "<div class='col-12'>";
+									echo "<p>".$nomArchivoRemate."</p>";
+									echo "</div>";
+									echo "</div>";
+								}
+								elseif ($tipArchivoRemate=="application/vnd.openxmlformats-officedocument.pres") {
+									echo "<div style='float:left;' class='col-3'>";
+									echo "<div class='col-12'>";
+									echo "<a href='../BD/archivos/".$urlArchivoRemate."'><i class='fas fa-file-powerpoint fa-5x'></i></a>";
+									echo "</div>";
+									echo "<div class='col-12'>";
+									echo "<p>".$nomArchivoRemate."</p>";
+									echo "</div>";
+									echo "</div>";
+								}
+								elseif ($tipArchivoRemate=="application/vnd.openxmlformats-officedocument.spre") {
+									echo "<div style='float:left;' class='col-3'>";
+									echo "<div class='col-12'>";
+									echo "<a href='../BD/archivos/".$urlArchivoRemate."'><i class='fas fa-file-excel fa-5x'></i></a>";
+									echo "</div>";
+									echo "<div class='col-12'>";
+									echo "<p>".$nomArchivoRemate."</p>";
+									echo "</div>";
+									echo "</div>";
+								}
+								//
 								}
 
 								//Liberas el resultado
@@ -160,13 +205,12 @@
 			</div>	
 			<br>
 			<div id="btnEnviar"class="col-12" style="text-align: center;">
-				<input type="submit" name="sbmtArchivo" id="btnAgregar" value="Agregar" class="btn btn-primary">	
-				<input type="button" id="btnVolver" value="Volver" class="btn btn-primary">	
+				<input type="submit" name="sbmtArchivo" id="btnAgregar" value="Agregar" class="btn btn-dark">	
+				<input type="button" id="btnVolver" value="Volver" class="btn btn-dark">	
 			</div>			
 		</form>		
 		<hr>	
 		<div id="pie" class="row col-12">
-			<h4>Footer</h4>
 		</div>
 	</div>
 

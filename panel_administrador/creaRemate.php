@@ -88,6 +88,7 @@
 				$fecRemate 	= 	$row['FEC_DETREMATE'];
 				$desRemate 	=	$row['DES_DETREMATE'];
 				$flgRemate 	=	$row['FLG_CONTIENE'];
+				$rutImgRem	=	$row['RUTA_IMGDETREMATE'];
 
 				echo"<div class='col-6'>";
 				//glsRemate
@@ -110,8 +111,16 @@
 						echo "<div class='col-9 glosa'>";
 							echo "<p>Imagen remate :</p>";	
 						echo "</div>";
-						echo "<div class='col-12'>";
-							echo "<input type='file'  name ='imgRemate' id='txtGlosaRemate'>";
+						echo "<div class='col-12 custom-file'>";
+							echo "<input type='file' name ='imgRemate' class='custom-file-input' id='customFile' onchange=''>";
+							echo "<label class='custom-file-label' id='lblInput' for='customFile'>$rutImgRem</label>";
+							//echo "<input type='file'  class='custom-file-input' name ='imgRemate' id='txtGlosaRemate'>";
+							/*
+<div class="custom-file">
+  <input type="file" class="custom-file-input" id="customFile">
+  <label class="custom-file-label" for="customFile">Choose file</label>
+</div>
+							*/
 						echo "</div>";				
 					echo "</div>";
 				//Fin Imagen de Remate	
@@ -151,7 +160,7 @@
 									echo "<p style='text-align: left;'>Archivos:</p>";	
 								echo "</div>";	
 								echo "<div class=''>";
-									echo "<input type='button' id='btnVerArchivos' value='Ver Archivos' class='btn btn-primary' name=''>";
+									echo "<input type='button' id='btnVerArchivos' value='Ver Archivos' class='btn btn-dark' name=''>";
 								echo "</div>";
 							echo "</div>";
 					//Fin Archivos					
@@ -255,8 +264,8 @@
 			</div>	
 			<br>
 			<div id="btnEnviar"class="col-12" style="text-align: center;">
-				<input type="submit" name="sbmtGuardar" id="btnGuardar" value="Guardar" class="btn btn-primary">	
-				<input type="button" id="btnCancelar" value="Cancelar" class="btn btn-primary">	
+				<input type="submit" name="sbmtGuardar" id="btnGuardar" value="Guardar" class="btn btn-dark">	
+				<input type="button" id="btnCancelar" value="Cancelar" class="btn btn-dark">	
 			</div>			
 		</form>		
 		<hr>	
