@@ -8,25 +8,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="style/index/bootstrap.min.css">
-    <link rel="stylesheet" href="style/index/magnific-popup.css">
-    <link rel="stylesheet" href="style/index/jquery-ui.css">
-    <link rel="stylesheet" href="style/index/owl.carousel.min.css">
-    <link rel="stylesheet" href="style/index/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="style/index/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
 
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 
 
-    <link rel="stylesheet" href="style/index/aos.css">
+    <link rel="stylesheet" href="css/aos.css">
 
-    <link rel="stylesheet" href="style/index/style.css">
-    <link href="styles.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" type="text/css" href="style/homePrincipal.css">
+    <link rel="stylesheet" href="css/style.css">
+    
   </head>
   <body>
   
@@ -103,7 +101,7 @@
     </header>
 
 
-      <div class="site-blocks-cover overlay" style="background-image: url(assets/FondoRemates.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
 
@@ -123,84 +121,33 @@
 
 
     <div class="site-section">
-
       
       <div class="container overlap-section">
         <div class="row">
-
-
-      <?php 
-
-include('BD/Conexion.php');
-
-$query = "SELECT  *
-FROM  REMATE.REM_DET_REMATE;";
-
-// Ejecutas las consulta
-$rs = mysqli_query($conn,$query);
-
-// Check resultado
-// Si hubo un error mostras cual es
-if (!$rs) {
-$message = 'Invalid query: ' . mysql_error() . " ";
-$message .= 'Whole query: ' . $query;
-die($message);
-}
-// Use result
-//Aca recorres todas las filas y te va devolviendo el resultado
-while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-$idRemate   = $row['ID_DETREMATE'];
-$glsRemate  = $row['GLS_DETREMATE'];
-$dirRemate  = $row['DIR_DETREMATE'];
-$fecRemate  =   $row['FEC_DETREMATE'];
-$desRemate  = $row['DES_DETREMATE'];
-$flgRemate  = $row['FLG_CONTIENE'];
-$imgRemate  = $row['RUTA_IMGDETREMATE'];
-
-if ($flgRemate>0) {
-  /*echo "idRemate = ".$idRemate." contiene DATOS!!";
-  echo "<br>";*/
-
-    echo "<div id='contieneRemate".$idRemate."' class='row contieneContenido col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-    if ($imgRemate!=""&&$imgRemate!=null) {
-      echo "<div class='divIzquierdo col-md-12 col-lg-3 mb-3 mb-lg-0 '>";
-      echo "<div class='contieneImagen col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-      echo  "<img class='imgRemate' src='BD/archivos/imgRemate/".$imgRemate."'>";
-      echo  "<hr>";
-      echo  "<p>".$glsRemate."</p>";
-      echo "<p>".$fecRemate."</p>";
-      echo "<p>".$dirRemate."</p>";
-      echo "</div>";  
-      echo "</div>";    
-      echo "<div  class='col-md-12 col-lg-9 mb-9 mb-lg-0 '>";
-      echo "<div class='contieneDescripcion col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-        echo "<p>".$desRemate."</p>";
-
-      echo "</div>";
-      echo "<div class='contieneArchivos col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-      echo "<input type='button' value='Ver archivos' class='btn btn-dark'>";  
-
-      echo "</div>";      
-      echo "</div>";
-      echo "</div>";
-
-
-      
-    }
- 
-
-}
-
-}
-
-//Liberas el resultado
-mysqli_free_result($rs);
-
-
-//Cerras coneccion
-mysqli_close($conn);
-?>
-
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <a href="#" class="unit-1 text-center">
+              <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+              <div class="unit-1-text">
+                <h3 class="unit-1-heading">Write Down Your Experience</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <a href="#" class="unit-1 text-center">
+              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+              <div class="unit-1-text">
+                <h3 class="unit-1-heading">Explore Asian Mountains</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <a href="#" class="unit-1 text-center">
+              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+              <div class="unit-1-text">
+                <h3 class="unit-1-heading">Safe Trip With Airasia</h3>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     
@@ -245,33 +192,75 @@ mysqli_close($conn);
       </div>
     </div>
   
-    <footer class="site-footer" >
-          <div class="col-lg-14 mb-15 mb-lg-5 ">       
 
+
+
+
+    
+    <div class="site-section block-13 bg-light">
   
- <center >
 
-  <form action="envia.php" method="post" class="form-consulta" >
-                  <h1>Contacto</h1>
-               <label>Nombre y apellido: <span>*</span>
-               <input type="text" name="nombre" placeholder="Nombre y apellido" class="campo-form" required>
-               </label>
-    
-               <label>Email: <span>*</span>
-               <input type="email" name="email" placeholder="Email" class="campo-form "    required>
-               </label>
-    
-               <label>Consulta:
-               <textarea name="consulta" class="campo-form"></textarea>
-               </label>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="mb-5">
+              <h3 class="footer-heading mb-4">About Travelers</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+            </div>
 
-               <input type="submit" value="Enviar" class="btn-form">
-               </form>
-
-               </center>
+            
+            
+          </div>
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="row mb-5">
+              <div class="col-md-12">
+                <h3 class="footer-heading mb-4">Navigations</h3>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Destination</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">About</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Discounts</a></li>
+                </ul>
               </div>
             </div>
-        <div class="row pt-15 mt-15 text-center">
+
+            
+
+          </div>
+
+          <div class="col-lg-4 mb-5 mb-lg-0">
+           
+
+            <div class="mb-5">
+              <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
+
+              <form action="#" method="post">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+          
+        </div>
+        <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
             <div class="mb-5">
               <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
@@ -279,11 +268,14 @@ mysqli_close($conn);
               <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
               <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
             </div>
-          </div>         
+
+          
+          </div>
+          
         </div>
       </div>
     </footer>
-
+  </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>

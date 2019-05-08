@@ -110,8 +110,8 @@ h1,h3
 .imgRemate
 {
 
-height: 100px;
-width: 150px;
+height: 100%;
+width: 100%;
 
 }
 
@@ -120,5 +120,35 @@ a
 
 	color: black;
 	text-decoration: none;
+
+}
+
+.contieneContenido
+
+{
+
+margin-top: 20px;
+border: 2px solid black;
+height: 400px;
+
+}
+
+.contieneImagen
+{
+
+	text-align: center;
+	margin-top: 10%;
+	height: 40%;
+	width: 100%;
+	
+}
+
+.divIzquierdo
+{
+
+border-right: 2px solid black;
+margin-left: 0px;
+height: 90%;
+margin-top: 0px;
 
 }

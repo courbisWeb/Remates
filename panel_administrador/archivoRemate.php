@@ -186,6 +186,17 @@
 									echo "</div>";
 									echo "</div>";
 								}
+								elseif ($tipArchivoRemate=="image/jpeg") {
+									echo "<div style='float:left;' class='col-3'>";
+									echo "<div class='col-12'>";
+									echo "<a href='../BD/archivos/".$urlArchivoRemate."'><i class='fas fa-image fa-5x'></i></a>";
+									echo "</div>";
+									echo "<div class='col-12'>";
+									echo "<p>".$nomArchivoRemate."</p>";
+									echo "</div>";
+									echo "</div>";
+									
+								}
 								//
 								}
 

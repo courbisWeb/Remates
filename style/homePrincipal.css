@@ -1,0 +1,56 @@
+.imgRemate
+{
+
+height: 100%;
+width: 100%;
+
+}
+
+.contieneContenido
+
+{
+
+color: black;
+margin-top: 20px;
+border: 2px solid black;
+height: 400px;
+
+}
+
+.contieneImagen
+{
+
+	text-align: center;
+	margin-top: 10%;
+	height: 40%;
+	width: 100%;
+	
+}
+
+.divIzquierdo
+{
+
+border-right: 2px solid black;
+margin-left: 0px;
+height: 100%;
+margin-top: 0px;
+float: left;
+
+}
+
+.contieneDescripcion
+{
+
+padding-top: 10%;
+height: 80%;
+
+}
+
+.contieneArchivos
+{
+border-top: 2px solid black;
+padding-top: 10px;
+padding-left: 40%;
+height: 50%;
+
+}
