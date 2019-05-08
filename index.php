@@ -41,7 +41,7 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     
-    <header class="site-navbar py-1" role="banner">
+    <header class="site-navbar py-1" style="background-color: white; opacity: 0.7;"role="banner">
 
       <div class="container">
         <div class="row align-items-center">
@@ -103,104 +103,130 @@
     </header>
 
 
-      <div class="site-blocks-cover overlay" style="background-image: url(assets/FondoRemates.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover colorDivCabecera" style="font-size: bold;  background-color: white;
+  opacity: 0.7;
+-webkit-box-shadow: -4px 42px 38px -10px rgba(0,0,0,0.75);
+-moz-box-shadow: -4px 42px 38px -10px rgba(0,0,0,0.75);
+box-shadow: -4px 42px 38px -10px rgba(0,0,0,0.75); height: 300px;" data-aos="fade" data-stellar-background-ratio="0.5">
+      </div>  
+
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+      <div class="site-blocks-cover col-8" style="font-size: bold; margin-top: -500px;" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
-
-            <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h1 class="text-white font-weight-light">Remates Valderas</h1>
+              <h1 style="font-size: bold; color: black;" class="">Remates Valderas</h1>
+           <!-- <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+              
               <p class="mb-5">Para recibir mas informacion de nuestros proximos retames, ingresa tu correo electronico</p>
               <input type="text" class="form-control border-secondary text-black" placeholder="Ingresa tu correo" aria-label="Enter Email" aria-describedby="button-addon2"> 
               <br>
               <p><a href="#" class="btn btn-primary py-3 px-5 text-white">Recibir informaci&oacuten</a></p>
 
-            </div>
+            </div>-->
           </div>
         </div>
-      </div>  
-
+      </div> 
+      <div class="col-2"></div>
+      </div>
+</div>
     </div>
 
 
     <div class="site-section">
 
       
-      <div class="container overlap-section">
+      <div class="colorPaper container overlap-section">
+        <div class="row">
+          <div class="col-3"></div>
+          <div style="text-align: center;"class="col-6">
+            <h1 style="margin-top: 20px; font-size: bold;">Listado de Remates</h1>
+            <hr>
+            <br>
+            </div>
+              <div class="col-3"></div>
+            </div>
         <div class="row">
 
+          
+            <?php 
 
-      <?php 
+            include('BD/Conexion.php');
 
-include('BD/Conexion.php');
+            $query = "SELECT  *
+            FROM  REMATE.REM_DET_REMATE;";
 
-$query = "SELECT  *
-FROM  REMATE.REM_DET_REMATE;";
+            // Ejecutas las consulta
+            $rs = mysqli_query($conn,$query);
 
-// Ejecutas las consulta
-$rs = mysqli_query($conn,$query);
+            // Check resultado
+            // Si hubo un error mostras cual es
+            if (!$rs) {
+            $message = 'Invalid query: ' . mysql_error() . " ";
+            $message .= 'Whole query: ' . $query;
+            die($message);
+            }
+            // Use result
+            //Aca recorres todas las filas y te va devolviendo el resultado
+            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+            $idRemate   = $row['ID_DETREMATE'];
+            $glsRemate  = $row['GLS_DETREMATE'];
+            $dirRemate  = $row['DIR_DETREMATE'];
+            $fecRemate  =   $row['FEC_DETREMATE'];
+            $desRemate  = $row['DES_DETREMATE'];
+            $flgRemate  = $row['FLG_CONTIENE'];
+            $imgRemate  = $row['RUTA_IMGDETREMATE'];
 
-// Check resultado
-// Si hubo un error mostras cual es
-if (!$rs) {
-$message = 'Invalid query: ' . mysql_error() . " ";
-$message .= 'Whole query: ' . $query;
-die($message);
-}
-// Use result
-//Aca recorres todas las filas y te va devolviendo el resultado
-while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-$idRemate   = $row['ID_DETREMATE'];
-$glsRemate  = $row['GLS_DETREMATE'];
-$dirRemate  = $row['DIR_DETREMATE'];
-$fecRemate  =   $row['FEC_DETREMATE'];
-$desRemate  = $row['DES_DETREMATE'];
-$flgRemate  = $row['FLG_CONTIENE'];
-$imgRemate  = $row['RUTA_IMGDETREMATE'];
+            if ($flgRemate>0) {
+              /*echo "idRemate = ".$idRemate." contiene DATOS!!";
+              echo "<br>";*/
+                echo "<div class='col-2'></div>";
+                echo "<div id='contieneRemate".$idRemate."' class='contieneContenido col-md-8 col-lg-8 mb-8 mb-lg-0 '>";
+                echo "<div class='row'>";
+                if ($imgRemate!=""&&$imgRemate!=null) {
+                  echo "<div class='divIzquierdo col-md-12 col-lg-4 mb-4 mb-lg-0 '>";
+                  echo "<div class='contieneImagen col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
+                  echo  "<img class='imgRemate' src='BD/archivos/imgRemate/".$imgRemate."'>";
+                  echo  "<br>";
+                  echo  "<br>";
+                  echo  "<h3>".$glsRemate."</h3>";
+                  echo "<p>".$fecRemate."</p>";
+                  echo "<p>".$dirRemate."</p>";
+                  echo "</div>";  
+                  echo "</div>";    
+                  echo "<div  class='col-md-12 col-lg-8 mb-8 mb-lg-0 '>";
+                  echo "<div class='contieneDescripcion col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
+                    echo "<p>".$desRemate."</p>";
 
-if ($flgRemate>0) {
-  /*echo "idRemate = ".$idRemate." contiene DATOS!!";
-  echo "<br>";*/
+                  echo "</div>";
+                  echo "<div class='contieneArchivos col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
+                  echo "<input type='button' value='Ver archivos' class='btn btn-dark'>";  
 
-    echo "<div id='contieneRemate".$idRemate."' class='row contieneContenido col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-    if ($imgRemate!=""&&$imgRemate!=null) {
-      echo "<div class='divIzquierdo col-md-12 col-lg-3 mb-3 mb-lg-0 '>";
-      echo "<div class='contieneImagen col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-      echo  "<img class='imgRemate' src='BD/archivos/imgRemate/".$imgRemate."'>";
-      echo  "<hr>";
-      echo  "<p>".$glsRemate."</p>";
-      echo "<p>".$fecRemate."</p>";
-      echo "<p>".$dirRemate."</p>";
-      echo "</div>";  
-      echo "</div>";    
-      echo "<div  class='col-md-12 col-lg-9 mb-9 mb-lg-0 '>";
-      echo "<div class='contieneDescripcion col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-        echo "<p>".$desRemate."</p>";
+                  echo "</div>";      
+                  echo "</div>";
+                  echo "</div>";
+                  echo "<br>";
+                  echo "<br>";                  
+                  echo "<hr>";                  
+                  echo "</div>";                  
+                  echo "<div class='col-2'></div>";
 
-      echo "</div>";
-      echo "<div class='contieneArchivos col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-      echo "<input type='button' value='Ver archivos' class='btn btn-dark'>";  
+                  
+                }
+             
 
-      echo "</div>";      
-      echo "</div>";
-      echo "</div>";
+            }
 
+            }
 
-      
-    }
- 
-
-}
-
-}
-
-//Liberas el resultado
-mysqli_free_result($rs);
+            //Liberas el resultado
+            mysqli_free_result($rs);
 
 
-//Cerras coneccion
-mysqli_close($conn);
-?>
-
+            //Cerras coneccion
+            mysqli_close($conn);
+            ?>
         </div>
       </div>
     

@@ -1,8 +1,24 @@
+body
+{
+
+	background-image: url('../assets/FondoRemates.jpeg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
 .imgRemate
 {
 
 height: 100%;
 width: 100%;
+border: 2px solid yellow;
+border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 2px solid #BABAA1;
 
 }
 
@@ -12,25 +28,23 @@ width: 100%;
 
 color: black;
 margin-top: 20px;
-border: 2px solid black;
 height: 400px;
-
+font-size: small;
 }
 
 .contieneImagen
 {
 
 	text-align: center;
-	margin-top: 10%;
-	height: 40%;
+	height: 100%;
 	width: 100%;
 	
 }
 
+
 .divIzquierdo
 {
 
-border-right: 2px solid black;
 margin-left: 0px;
 height: 100%;
 margin-top: 0px;
@@ -40,17 +54,40 @@ float: left;
 
 .contieneDescripcion
 {
-
+background-color:#FAFAFA;
 padding-top: 10%;
-height: 80%;
-
+padding-bottom: 10%;
+height: 250px;
+overflow: auto;
+overflow-y: scroll;
+border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 2px solid #BABAA1;
 }
 
 .contieneArchivos
 {
-border-top: 2px solid black;
+
 padding-top: 10px;
 padding-left: 40%;
 height: 50%;
 
+}
+
+.colorPaper
+{
+	margin-top: -200px;
+	background-color: #F3F3E0;
+	-webkit-box-shadow: 2px 10px 23px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 10px 23px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 10px 23px 0px rgba(0,0,0,0.75);
+}
+
+
+.contieneContenido hr 
+{
+	border: 0;
+ 	height: 12px;
+	 box-shadow: inset 0 12px 12px -12px #BABAA1;
 }
