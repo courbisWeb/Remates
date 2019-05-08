@@ -54,10 +54,11 @@ float: left;
 
 .contieneDescripcion
 {
+	margin-top: 5%;
 background-color:#FAFAFA;
-padding-top: 10%;
+padding-top: 10px;
 padding-bottom: 10%;
-height: 250px;
+height: 200px;
 overflow: auto;
 overflow-y: scroll;
 border-radius: 10px 10px 10px 10px;

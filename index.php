@@ -201,10 +201,15 @@ box-shadow: -4px 42px 38px -10px rgba(0,0,0,0.75); height: 300px;" data-aos="fad
 
                   echo "</div>";
                   echo "<div class='contieneArchivos col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-                  echo "<input type='button' value='Ver archivos' class='btn btn-dark'>";  
+                  echo "</div>";   
 
-                  echo "</div>";      
                   echo "</div>";
+                  echo "<div class='col-2'></div>";
+                  echo "<div class='col-8'>";
+                  
+                   echo "<input type='button' value='Ver archivos' class='btn btn-dark btn-lg btn-block'>";
+                  echo "</div>";
+                   echo "<div class='col-2'></div>";
                   echo "</div>";
                   echo "<br>";
                   echo "<br>";                  
@@ -228,76 +233,7 @@ box-shadow: -4px 42px 38px -10px rgba(0,0,0,0.75); height: 300px;" data-aos="fad
             mysqli_close($conn);
             ?>
         </div>
-      </div>
-    
-    </div>
-
-
-    <div class="site-section">
-      <div class="container">
-        <div class="row align-items-stretch">
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="unit-4 d-flex">
-              <div class="unit-4-icon mr-4"><span class="text-primary flaticon-airplane"></span></div>
-              <div>
-                <h3>Air Ticketing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="unit-4 d-flex">
-              <div class="unit-4-icon mr-4"><span class="text-primary flaticon-ship"></span></div>
-              <div>
-                <h3>Cruises</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="unit-4 d-flex">
-              <div class="unit-4-icon mr-4"><span class="text-primary flaticon-route"></span></div>
-              <div>
-                <h3>Tour Packages</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  
-    <footer class="site-footer" >
-          <div class="col-lg-14 mb-15 mb-lg-5 ">       
-
-  
- <center >
-
-  <form action="envia.php" method="post" class="form-consulta" >
-                  <h1>Contacto</h1>
-               <label>Nombre y apellido: <span>*</span>
-               <input type="text" name="nombre" placeholder="Nombre y apellido" class="campo-form" required>
-               </label>
-    
-               <label>Email: <span>*</span>
-               <input type="email" name="email" placeholder="Email" class="campo-form "    required>
-               </label>
-    
-               <label>Consulta:
-               <textarea name="consulta" class="campo-form"></textarea>
-               </label>
-
-               <input type="submit" value="Enviar" class="btn-form">
-               </form>
-
-               </center>
-              </div>
-            </div>
-        <div class="row pt-15 mt-15 text-center">
+                <div class="row pt-15 mt-15 text-center">
           <div class="col-md-12">
             <div class="mb-5">
               <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
@@ -308,8 +244,38 @@ box-shadow: -4px 42px 38px -10px rgba(0,0,0,0.75); height: 300px;" data-aos="fad
           </div>         
         </div>
       </div>
-    </footer>
+    
+    </div>
+    <hr>
+    <center>
+      <div class="container">
+        <div class="row">
+                <div class="col-12">
+  <form action="envia.php" method="post" class="form-consulta" >
+                  <h1>Contacto</h1>
+               <label>Nombre y apellido: <span>*</span>
+               <input type="text" name="nombre" placeholder="Nombre y apellido" class="campo-form" required>
+               </label>
+    
+               <label>Email: <span>*</span>
+                <div class="col-12">
+                  <input type="email" name="email" placeholder="Email" class="campo-form "    required>
+                </div>               
+               </label>
+    <br>
+               <label>Consulta:
+               <textarea name="consulta" class="campo-form"></textarea>
+               </label>
+<br>
+               <input type="submit" value="Enviar" class="btn-form">
+               </form>
 
+               </center>
+               </div>
+        </div>
+      </div>
+
+               <br>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
