@@ -87,10 +87,10 @@ if ($flgRemate>0) {
 
 		echo "<div id='contieneRemate".$idRemate."' class='agregaRemate contieneRemate col-2'>";
 		if ($imgRemate!=""&&$imgRemate!=null) {
-			echo	"<img class='imgRemate' src='../BD/archivos/imgRemate/".$imgRemate."'>";
+			echo	"<img style='height:60%;' class='imgRemate' src='../BD/archivos/imgRemate/".$imgRemate."'>";
 		}
 		else{
-			echo	"<i class='fas fa-plus fa-5x'></i>";
+			echo	"<i class='fas fa-gavel fa-5x'></i>";
 		}		
 		echo	"<hr>";
 		echo	"<p>".$glsRemate."</p>";

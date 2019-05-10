@@ -27,6 +27,9 @@
     <link href="styles.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="style/homePrincipal.css">
+<!--Font Awesome-->      
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<!--Fin Font Awesome-->      
   </head>
   <body>
   
@@ -49,6 +52,33 @@
       </header>
     </div>
   
+    <div style="font-size: bold;" class="RecibeInfo">
+      <form>
+        <center>
+          <br>
+          <h4>¿Quieres recibir información?</h4>        
+        </center>  
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p>Nombre:</p>
+            </div>          
+            <div class="col-12">
+              <input type="text" class="form-control" name="">          
+            </div>
+            <div style="margin-top: 10%;"class="col-12">
+              <p>Correo:</p>
+            </div>
+            <div  class="col-12">
+              <input type="text" class="form-control" name="">          
+            </div>            
+          </div>
+        </div>  
+        <br>
+        <br>
+        <input type="submit" class="btn btn-dark btn-lg btn-block" name="" value="Enviar Contacto">
+      </form>      
+    </div>
 
     <div class="site-section">
       <div class="container">
@@ -93,13 +123,16 @@
                     $flgRemate  = $row['FLG_CONTIENE'];
                     $imgRemate  = $row['RUTA_IMGDETREMATE'];
                     if ($flgRemate>0) {
+                      /*Inicio Div Separador*/
                       echo "<div class='col-1'></div>";
+                      /*Fin Div Separador*/
+                      /*Inicio Div Contiene Remate*/
                       echo "<div id='contieneRemate".$idRemate."' class='contieneContenido col-md-12 col-lg-10 mb-10 mb-lg-0 '>";
                       echo "<div class='row'>";
                       if ($imgRemate!=""&&$imgRemate!=null) {
-                        echo "<div class='divIzquierdo col-md-12 col-lg-4 mb-4 mb-lg-0 '>";
+                        echo "<div class='divIzquierdo col-md-12 col-lg-4 col-sm-12 '>";
                         echo "<div class='contieneImagen col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-                        echo  "<img class='imgRemate' src='BD/archivos/imgRemate/".$imgRemate."'>";
+                        echo  "<img class='imgRemate img-responsive' src='BD/archivos/imgRemate/".$imgRemate."'>";
                         echo  "<br>";
                         echo  "<br>";
                         echo  "<h3>".$glsRemate."</h3>";
@@ -110,24 +143,55 @@
                         echo "<div  class='col-md-12 col-lg-8 mb-8 mb-lg-0 '>";
                         echo "<div class='contieneDescripcion col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
                         echo "<p>".$desRemate."</p>";
-
                         echo "</div>";
-                        echo "<div class='contieneArchivos col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-                        echo "</div>";   
-
                         echo "</div>";
-                        echo "<div class='col-2'></div>";
-                        echo "<div class='col-8'>";
-                  
                         echo "<input type='button' value='Ver archivos' class='btn btn-dark btn-lg btn-block'>";
+                        echo "<div class='col-8'>";                  
+                        
                         echo "</div>";
                         echo "<div class='col-1'></div>";
                         echo "</div>";
-                        echo "<br>";
-                        echo "<br>";                  
+                        echo "<br>"; 
                         echo "<hr>";                  
-                        echo "</div>";                  
-                        echo "<div class='col-2'></div>";                  
+                        echo "<br>"; 
+                        echo "</div>";  
+                        /*Fin Div Contiene Remate*/
+                        /*Inicio Div Separador*/
+                        echo "<div class='col-1'></div>";                  
+                        /*Fin Div Separador*/                        
+                      }
+                      else
+                      {
+                        echo "<div class='divIzquierdo col-md-12 col-lg-4 mb-4 mb-lg-0 '>";
+                        echo "<div class='contieneImagen col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
+                        echo  "<i class='fas fa-gavel fa-7x'></i>";
+                        echo  "<br>";
+                        echo  "<br>";
+                        echo  "<h3>".$glsRemate."</h3>";
+                        echo "<p>".$fecRemate."</p>";
+                        echo "<p>".$dirRemate."</p>";
+                        echo "</div>";  
+                        echo "</div>";    
+                        echo "<div  class='col-md-12 col-lg-8 mb-8 mb-lg-0 '>";
+                        echo "<div class='contieneDescripcion col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
+                        echo "<p>".$desRemate."</p>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "<input type='button' value='Ver archivos' class='btn btn-dark btn-lg btn-block'>";     
+                        echo "<div class='col-8'>";
+                  
+                        
+                        echo "</div>";
+                        echo "<div class='col-1'></div>";
+                        echo "</div>";
+                        echo "<br>"; 
+                        echo "<hr>";                  
+                        echo "<br>"; 
+                        echo "</div>";  
+                        /*Fin Div Contiene Remate*/
+                        /*Inicio Div Separador*/
+                        echo "<div class='col-1'></div>";                  
+                        /*Fin Div Separador*/ 
                       }
                     }
                   }
@@ -139,6 +203,7 @@
                 ?>
                 <!--FIN PHP-->
               </div>
+              <br>
                 <!--INICIO REDES SOCIALES-->
                 <div class="row pt-15 mt-15 text-center">
                 <div class="col-md-12">
@@ -158,10 +223,11 @@
         <hr>
         <center>
           <!--INICIO CONTACTO-->
+          <!--
           <div class="container">
             <div class="row">
               <div class="col-12">
-                <form action="envia.php" method="post" class="form-consulta" >
+                <form action="envia.php" method="post"class="form-consulta" >
                   <h1>Contacto</h1>
                   <label>Nombre y apellido: <span>*</span>
                   <input type="text" name="nombre" placeholder="Nombre y apellido" class="campo-form" required>
@@ -181,6 +247,8 @@
               </div>
             </div>
           </div>
+          -->
+          <!--FIN CONTACTO-->
         </center>
       </div>
     </div>     

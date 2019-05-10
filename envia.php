@@ -1,6 +1,6 @@
 ﻿<?php
 $remitente = $_POST['email'];
-$destinatario = 'carlos.ortega2727@gmail.com'; // en esta línea va el mail del destinatario.
+$destinatario = 'courbisweb@gmail.com'; // en esta línea va el mail del destinatario.
 $asunto = 'Consulta'; // acá se puede modificar el asunto del mail
 if (!$_POST){
 ?>
@@ -14,12 +14,9 @@ if (!$_POST){
 	//las líneas de arriba definen el contenido del mail. Las palabras que están dentro de $_POST[""] deben coincidir con el "name" de cada campo. 
 	// Si se agrega un campo al formulario, hay que agregarlo acá.
 
-    $headers  = "MIME-Version: 1.0\n";
-    $headers .= "Content-type: text/plain; charset=utf-8\n";
-    $headers .= "X-Priority: 3\n";
-    $headers .= "X-MSMail-Priority: Normal\n";
-    $headers .= "X-Mailer: php\n";
-    $headers .= "From: \"".$_POST['nombre']." ".$_POST['apellido']."\" <".$remitente.">\n";
+    $headers = 'From: '.$destinatario."\r\n".
+    'Reply-To:'.$destinatario."\r\n".
+    'X-Mailer: PHP/'.phpversion();
 
     mail($destinatario, $asunto, $cuerpo, $headers);
     

@@ -23,7 +23,23 @@
 			$upload =	$ruta.$nombreFinal;
 
 			if (move_uploaded_file($_FILES['imgRemate']['tmp_name'], $upload)) {//Movemos el archivo a su ubicacion
-
+				echo "<br>";
+				echo "***********************";
+				echo "<br>";
+				echo "idRemate 			= ".$idRemate;
+				echo "<br>";
+				echo "glsRemate			= ".$glsRemate;
+				echo "<br>";
+				echo "direccionRemate	= ".$direccionRemate;
+				echo "<br>";
+				echo "fecRemate			= ".$fecRemate;
+				echo "<br>";
+				echo "descRemate		= ".$descRemate;
+				echo "<br>";
+				echo "nombreFinal 		= ".$nombreFinal;
+				echo "<br>";
+				echo "***********************";
+				echo "<br>";
 
 				/*query*/
 				$rs	=	mysqli_query($conn, "SELECT 	REMATE.AGREGA_DET_REMATE($idRemate ,'$glsRemate','$direccionRemate','$fecRemate','$descRemate','$nombreFinal');")or die(mysql_error());
@@ -34,6 +50,23 @@
 		}
 		else
 		{
+
+				echo "<br>";
+				echo "***********************";
+				echo "<br>";
+				echo "idRemate 			= ".$idRemate;
+				echo "<br>";
+				echo "glsRemate			= ".$glsRemate;
+				echo "<br>";
+				echo "direccionRemate	= ".$direccionRemate;
+				echo "<br>";
+				echo "fecRemate			= ".$fecRemate;
+				echo "<br>";
+				echo "descRemate		= ".$descRemate;
+				echo "<br>";
+				echo "***********************";
+				echo "<br>";
+
 				$rs	=	mysqli_query($conn, "SELECT 	REMATE.AGREGA_DET_REMATE($idRemate ,'$glsRemate','$direccionRemate','$fecRemate','$descRemate','');")or die(mysql_error());
 				/*fin query*/
 				mysqli_close($conn);
