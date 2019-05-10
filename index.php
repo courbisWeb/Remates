@@ -26,10 +26,21 @@
     <link rel="stylesheet" href="style/index/style.css">
     <link href="styles.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" type="text/css" href="style/homePrincipal.css">
+
+  <!--jquery-->
+  <script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous">    
+  </script>
+  <!--fin jquery-->
 <!--Font Awesome-->      
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-<!--Fin Font Awesome-->      
+<!--Fin Font Awesome--> 
+  <!--Archivos externos-->
+  <script type="text/javascript" src="js/home.js"></script>
+  <link rel="stylesheet" type="text/css" href="style/homePrincipal.css">
+  <!--Fin Archivos externos-->     
   </head>
   <body>
   
@@ -145,7 +156,7 @@
                         echo "<p>".$desRemate."</p>";
                         echo "</div>";
                         echo "</div>";
-                        echo "<input type='button' value='Ver archivos' class='btn btn-dark btn-lg btn-block'>";
+                        echo "<input type='button' value='Ver archivos' id='btnRemate".$idRemate."' class='btn btn-dark btn-lg btn-block'>";
                         echo "<div class='col-8'>";                  
                         
                         echo "</div>";
@@ -177,7 +188,7 @@
                         echo "<p>".$desRemate."</p>";
                         echo "</div>";
                         echo "</div>";
-                        echo "<input type='button' value='Ver archivos' class='btn btn-dark btn-lg btn-block'>";     
+                        echo "<input type='button' value='Ver archivos' id='btnRemate".$idRemate."' class='btn btn-dark btn-lg btn-block'>";     
                         echo "<div class='col-8'>";
                   
                         
