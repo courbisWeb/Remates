@@ -147,6 +147,7 @@ height: 50%;
 	display: none;
 }
 
+/*SMARTPHONE*/
 @media screen and (max-width: 600px)
 {
 #logo	
@@ -195,6 +196,55 @@ height: 50%;
 	margin-bottom: 0px;
 }
 }
+/*SMARTPHONE*/
+/*TABLET*/
 
+@media screen and (max-width: 768px)
+{
+#logo	
+{
+	display: none;
+}
+}
 
+@media screen and (max-width: 768px)
+{
+#logoPhone	
+{
+	display: block;
+}
+}
+
+@media screen and (max-width: 768px)
+{
+#enviaContacto	
+{
+	display: none;
+}
+}
+
+@media screen and (max-width: 768px)
+{
+#enviaContactoPhone	
+{
+	display: block;
+}
+}
+
+@media screen and (max-width: 768px)
+{
+#recibeInfoBTN	
+{
+	display: block;
+}
+}
+
+@media screen and (max-width: 768px)
+{
+.colorPaper	
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+}
 

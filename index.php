@@ -61,42 +61,6 @@
   </div>
 <!--Fin recibeInfoBTN-->  
   <div class="row">
-<!--Contacto grande-->  
-        <div id="enviaContacto" style="font-size: bold;" class="RecibeInfo">
-          <form action="envia.php" method="post">
-            <center>
-              <br>
-              <h4>¿Quieres recibir información?</h4>        
-            </center>  
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                  <p>Nombre:</p>
-                </div>          
-                <div class="col-12">
-                  <input type="text" class="form-control" name="nombre">          
-                </div>
-                <div style="margin-top: 10%;"class="col-12">
-                  <p>Correo:</p>
-                </div>
-                <div  class="col-12">
-                  <input type="text" class="form-control" name="email">          
-                </div>  
-                <div style="margin-top: 10%;"class="col-12">
-                  <p>Comentario:</p>
-                </div>
-                <div  class="col-12">
-                  <textarea class="form-control" name="consulta" ></textarea>         
-                </div>           
-              </div>
-            </div>  
-            <br>
-            <br>
-            <input type="submit" class="btn btn-dark btn-lg btn-block" name="" value="Enviar Contacto">
-          </form>      
-        </div>
-<!--Fin Contacto grande-->  
-
 <!--*************************************Contenido principal******************************************************-->
               <div class="col-xs-0 col-sm-0 col-md-3 col-lg-3"></div>
               <div class="colorPaper col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -205,7 +169,41 @@
                 </div>
               <div class="col-xs-0 col-sm-0 col-md-3 col-lg-3"></div>    
             <hr>    
-    <!--*************************************Fin Contenido principal******************************************************-->
+    <!--*************************************Fin Contenido principal**********************************************-->
+<!--Contacto grande-->  
+    <div id="enviaContacto" style="font-size: bold;" class="RecibeInfo">
+      <form action="envia.php" method="post">
+        <center>
+          <br>
+          <h4>¿Quieres recibir información?</h4>        
+        </center>  
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p>Nombre:</p>
+            </div>          
+            <div class="col-12">
+              <input type="text" class="form-control" name="nombre">          
+            </div>
+            <div style="margin-top: 10%;"class="col-12">
+              <p>Correo:</p>
+            </div>
+            <div  class="col-12">
+              <input type="text" class="form-control" name="email">          
+            </div>  
+            <div style="margin-top: 10%;"class="col-12">
+              <p>Comentario:</p>
+            </div>
+            <div  class="col-12">
+              <textarea class="form-control" name="consulta" ></textarea>         
+            </div>           
+          </div>
+        </div>  
+        <br>
+        <input type="submit" class="btn btn-dark btn-lg btn-block" name="" value="Enviar Contacto">
+      </form>      
+    </div>
+<!--Fin Contacto grande-->  
   </div>
 
 <!--Contacto Mobile-->
