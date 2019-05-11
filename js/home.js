@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	console.log("Jquery charged!!")
+	console.log("Jquery charged!!");
 
 $("#btnRemate1").click(function(){
 window.open('verArchivos.php?idRemate=1','','width= 500,height=500');
@@ -19,6 +19,11 @@ window.open('verArchivos.php?idRemate=4','','width= 500,height=500');
 
 $("#btnRemate5").click(function(){
 window.open('verArchivos.php?idRemate=5','','width= 500,height=500');
+});
+
+$("#recibeInfoBTN").click(function(){
+	console.log("Jquery charged!!");
+	$('html, body').animate({scrollTop: '10000px'}, 800);
 });
 
 });

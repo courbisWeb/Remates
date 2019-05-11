@@ -9,6 +9,32 @@ body
 
 }
 
+.encabezado
+{
+	position: fixed;
+}
+
+#logoPhone
+{
+
+	display: none;
+	background-color: white;
+
+}
+
+#enviaContacto
+{
+	position: fixed;
+}
+
+#recibeInfoBTN
+{
+	display: none;
+	background-color: #FF7733;
+	border: 2px solid #BABAA1;
+	color: white;
+}
+
 .imgRemate
 {
 
@@ -90,7 +116,6 @@ height: 50%;
 .RecibeInfo
 {
 	margin-top: 12%;
-	position: fixed;
 	width: 300px;
 	height: 500px;
 	background-color: #FF7733;
@@ -102,3 +127,68 @@ height: 50%;
 	-webkit-border-radius: 10px 10px 10px 10px;
 	border: 2px solid #BABAA1;
 }
+
+.RecibeInfoPhone
+{
+	display: none;
+	height: 500px;
+	background-color: #FF7733;
+	border: 2px solid #BABAA1;
+}
+
+#enviaContactoPhone
+{
+	display: none;
+}
+
+@media screen and (max-width: 600px)
+{
+#logo	
+{
+	display: none;
+}
+}
+
+@media screen and (max-width: 600px)
+{
+#logoPhone	
+{
+	display: block;
+}
+}
+
+@media screen and (max-width: 600px)
+{
+#enviaContacto	
+{
+	display: none;
+}
+}
+
+@media screen and (max-width: 600px)
+{
+#enviaContactoPhone	
+{
+	display: block;
+}
+}
+
+@media screen and (max-width: 600px)
+{
+#recibeInfoBTN	
+{
+	display: block;
+}
+}
+
+@media screen and (max-width: 600px)
+{
+.colorPaper	
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+}
+
+
+
