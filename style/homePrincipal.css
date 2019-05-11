@@ -35,6 +35,12 @@ body
 	color: white;
 }
 
+textarea
+{
+	resize: none;
+	height: 100px;
+}
+
 .imgRemate
 {
 

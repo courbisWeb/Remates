@@ -63,7 +63,7 @@
   <div class="row">
 <!--Contacto grande-->  
         <div id="enviaContacto" style="font-size: bold;" class="RecibeInfo">
-          <form>
+          <form action="envia.php" method="post">
             <center>
               <br>
               <h4>¿Quieres recibir información?</h4>        
@@ -74,19 +74,19 @@
                   <p>Nombre:</p>
                 </div>          
                 <div class="col-12">
-                  <input type="text" class="form-control" name="">          
+                  <input type="text" class="form-control" name="nombre">          
                 </div>
                 <div style="margin-top: 10%;"class="col-12">
                   <p>Correo:</p>
                 </div>
                 <div  class="col-12">
-                  <input type="text" class="form-control" name="">          
+                  <input type="text" class="form-control" name="email">          
                 </div>  
                 <div style="margin-top: 10%;"class="col-12">
                   <p>Comentario:</p>
                 </div>
                 <div  class="col-12">
-                  <textarea></textarea>         
+                  <textarea class="form-control" name="consulta" ></textarea>         
                 </div>           
               </div>
             </div>  
@@ -211,7 +211,7 @@
 <!--Contacto Mobile-->
 <div class="row">
   <div id="enviaContactoPhone" class="col-12 RecibeInfoPhone">
-    <form>
+    <form action="envia.php" method="post">
       <center>
         <br>
         <h4>¿Quieres recibir información?</h4>        
@@ -222,19 +222,19 @@
             <p>Nombre:</p>
           </div>          
           <div class="col-12">
-            <input type="text" class="form-control" name="">          
+            <input type="text" class="form-control" name="nombre">          
           </div>
           <div style="margin-top: 10%;"class="col-12">
             <p>Correo:</p>
           </div>
           <div  class="col-12">
-            <input type="text" class="form-control" name="">          
+            <input type="text" class="form-control" name="email">          
           </div>  
           <div style="margin-top: 10%;"class="col-12">
             <p>Comentario:</p>
           </div>
           <div  class="col-12">
-            <textarea></textarea>         
+            <textarea class="form-control" name="consulta"></textarea>         
           </div>           
         </div>
       </div>  
