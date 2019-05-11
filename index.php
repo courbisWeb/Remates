@@ -5,46 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-
+<!--Bootstrap-->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!--Fin Bootstrap-->
     <link rel="stylesheet" href="style/index/bootstrap.min.css">
-    <link rel="stylesheet" href="style/index/magnific-popup.css">
-    <link rel="stylesheet" href="style/index/jquery-ui.css">
-    <link rel="stylesheet" href="style/index/owl.carousel.min.css">
-    <link rel="stylesheet" href="style/index/owl.theme.default.min.css">
-
-    <link rel="stylesheet" href="style/index/bootstrap-datepicker.css">
-
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
-
-
-    <link rel="stylesheet" href="style/index/aos.css">
-
-    <link rel="stylesheet" href="style/index/style.css">
-    <link href="styles.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
-
-  <!--jquery-->
-  <script
-  src="https://code.jquery.com/jquery-3.4.0.min.js"
-  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
-  crossorigin="anonymous">    
-  </script>
-  <!--fin jquery-->
 <!--Font Awesome-->      
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <!--Fin Font Awesome--> 
   <!--Archivos externos-->
-  <script type="text/javascript" src="js/home.js"></script>
   <link rel="stylesheet" type="text/css" href="style/homePrincipal.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
   <!--Fin Archivos externos-->     
   </head>
   <body>
-  
-    <div style="position: fixed;" class="col-12 site-wrap">
+<!--Cabecera con logos en los extremos-->
+    <div style="position: fixed;" class="hidden-xs-down hidden-sm-down hidden-md-down hidden-lg-down col-12 site-wrap">
       
       <header class="col-12 site-navbar py-1" style="background-color: white;opacity: 0.5; margin-bottom: 0px;"role="banner">
           <div class="row col-12 align-items-center">
@@ -62,8 +40,10 @@
           </div>        
       </header>
     </div>
-  
-    <div style="font-size: bold;" class="RecibeInfo">
+<!--Fin Cabecera con logos en los extremos-->   
+
+<!--Contacto-->  
+    <div style="font-size: bold;" class="hidden-xs-down hidden-sm-down RecibeInfo">
       <form>
         <center>
           <br>
@@ -82,7 +62,13 @@
             </div>
             <div  class="col-12">
               <input type="text" class="form-control" name="">          
-            </div>            
+            </div>  
+            <div style="margin-top: 10%;"class="col-12">
+              <p>Comentario:</p>
+            </div>
+            <div  class="col-12">
+              <textarea></textarea>         
+            </div>           
           </div>
         </div>  
         <br>
@@ -90,23 +76,21 @@
         <input type="submit" class="btn btn-dark btn-lg btn-block" name="" value="Enviar Contacto">
       </form>      
     </div>
+<!--Fin Contacto-->      
 
     <div class="site-section">
       <div class="container">
-        <div class="row">
-          <div class="col-md-1 col-lg-2 mb-2 mb-lg-0"></div>
-          <div class="col-md-10 col-lg-8 mb-8 mb-lg-0">
-            <div class="colorPaper container overlap-section">
+          <div class="col-xs-0 col-sm-0 col-md-2 col-lg-2"></div>
+          <div class="colorPaper col-xs-12 col-sm-12 col-md-8 col-lg-8">
               <div class="row">
-                <div class="col-3"></div>
-                <div style="text-align: center;"class="col-6">
+                <div class="col-xs-0 col-sm-0 col-md-3 col-lg-3"></div>
+                <div style="text-align: center;"class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                   <h1 style="margin-top: 20px; font-size: bold;">Listado de Remates</h1>
                   <hr>
                   <br>
                 </div>
-                <div class="col-3"></div>
+                <div class="col-xs-0 col-sm-0 col-md-3 col-lg-3"></div>
               </div>
-              <div class="row">
 <!--INICIO PHP-->          
                 <?php 
                   include('BD/Conexion.php');
@@ -133,77 +117,51 @@
                     $desRemate  = $row['DES_DETREMATE'];
                     $flgRemate  = $row['FLG_CONTIENE'];
                     $imgRemate  = $row['RUTA_IMGDETREMATE'];
-                    if ($flgRemate>0) {
-                      /*Inicio Div Separador*/
-                      echo "<div class='col-1'></div>";
-                      /*Fin Div Separador*/
-                      /*Inicio Div Contiene Remate*/
-                      echo "<div id='contieneRemate".$idRemate."' class='contieneContenido col-md-12 col-lg-10 mb-10 mb-lg-0 '>";
-                      echo "<div class='row'>";
-                      if ($imgRemate!=""&&$imgRemate!=null) {
-                        echo "<div class='divIzquierdo col-md-12 col-lg-4 col-sm-12 '>";
-                        echo "<div class='contieneImagen col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-                        echo  "<img class='imgRemate img-responsive' src='BD/archivos/imgRemate/".$imgRemate."'>";
-                        echo  "<br>";
-                        echo  "<br>";
-                        echo  "<h3>".$glsRemate."</h3>";
-                        echo "<p>".$fecRemate."</p>";
-                        echo "<p>".$dirRemate."</p>";
-                        echo "</div>";  
-                        echo "</div>";    
-                        echo "<div  class='col-md-12 col-lg-8 mb-8 mb-lg-0 '>";
-                        echo "<div class='contieneDescripcion col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-                        echo "<p>".$desRemate."</p>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "<input type='button' value='Ver archivos' id='btnRemate".$idRemate."' class='btn btn-dark btn-lg btn-block'>";
-                        echo "<div class='col-8'>";                  
-                        
-                        echo "</div>";
-                        echo "<div class='col-1'></div>";
-                        echo "</div>";
-                        echo "<br>"; 
-                        echo "<hr>";                  
-                        echo "<br>"; 
-                        echo "</div>";  
-                        /*Fin Div Contiene Remate*/
-                        /*Inicio Div Separador*/
-                        echo "<div class='col-1'></div>";                  
-                        /*Fin Div Separador*/                        
-                      }
-                      else
-                      {
-                        echo "<div class='divIzquierdo col-md-12 col-lg-4 mb-4 mb-lg-0 '>";
-                        echo "<div class='contieneImagen col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-                        echo  "<i class='fas fa-gavel fa-7x'></i>";
-                        echo  "<br>";
-                        echo  "<br>";
-                        echo  "<h3>".$glsRemate."</h3>";
-                        echo "<p>".$fecRemate."</p>";
-                        echo "<p>".$dirRemate."</p>";
-                        echo "</div>";  
-                        echo "</div>";    
-                        echo "<div  class='col-md-12 col-lg-8 mb-8 mb-lg-0 '>";
-                        echo "<div class='contieneDescripcion col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
-                        echo "<p>".$desRemate."</p>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "<input type='button' value='Ver archivos' id='btnRemate".$idRemate."' class='btn btn-dark btn-lg btn-block'>";     
-                        echo "<div class='col-8'>";
-                  
-                        
-                        echo "</div>";
-                        echo "<div class='col-1'></div>";
-                        echo "</div>";
-                        echo "<br>"; 
-                        echo "<hr>";                  
-                        echo "<br>"; 
-                        echo "</div>";  
-                        /*Fin Div Contiene Remate*/
-                        /*Inicio Div Separador*/
-                        echo "<div class='col-1'></div>";                  
-                        /*Fin Div Separador*/ 
-                      }
+                    if ($flgRemate>0) 
+                    {
+                      echo "<div style='margin-bottom:50px; margin-top:50px;'; class='container'>";
+                            /*Inicio Div Contiene Remate*/
+                            echo "<div id='contieneRemate".$idRemate."' class='contieneContenido row'>";                          
+                              echo "<div class='divIzquierdo col-xs-12 col-sm-12 col-md-4 col-lg-4'>";
+                                echo "<div class='row'>";
+                                  if ($imgRemate!=""&&$imgRemate!=null) {
+                                    echo "<div class='contieneImagen col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
+                                      echo  "<img class='imgRemate img-responsive' src='BD/archivos/imgRemate/".$imgRemate."'>";
+                                    echo "</div>";
+                                  }
+                                  else
+                                  {
+                                    echo "<div class='col-3'></div>";
+                                    echo "<div class='col-3'>";
+                                      echo  "<i class='fas fa-gavel fa-7x'></i>";
+                                    echo "</div>";
+                                    echo "<div class='col-3'></div>"; 
+                                  }   
+                                echo "</div>";
+                                echo "<br>"; 
+                                echo "<div class='row'>";
+                                  echo "<div style='text-align:center;' class='col-md-12 col-lg-12 mb-12 mb-lg-0 '>";     
+                                    echo  "<h3>".$glsRemate."</h3>";
+                                    echo "<p>".$fecRemate."</p>";
+                                    echo "<p>".$dirRemate."</p>";
+                                  echo "</div>";  
+                                echo "</div>";                                   
+                              echo "</div>";    
+                              echo "<div  class='col-md-12 col-lg-8 mb-8 mb-lg-0 '>";
+                                echo "<div class='contieneDescripcion col-md-12 col-lg-12 mb-12 mb-lg-0 '>";
+                                  echo "<p>".$desRemate."</p>";
+                                echo "</div>";
+                              echo "</div>";
+                            echo "</div>"; 
+                            echo "<div class='row'>";
+                              echo "<div class='col-md-12 col-lg-12 mb-12 mb-lg-12 '>";
+                                echo "<input style='margin-top:20px;' type='button' value='Ver archivos' id='btnRemate".$idRemate."' class='btn btn-dark btn-lg btn-block'>"; 
+                              echo "</div>"; 
+                            echo "</div>";  
+                          /*Fin Div Contiene Remate*/
+                      echo "</div>";
+                      echo "<hr>";                             
+                      
                     }
                   }
                   //Liberas el resultado
@@ -213,7 +171,6 @@
                   mysqli_close($conn);
                 ?>
                 <!--FIN PHP-->
-              </div>
               <br>
                 <!--INICIO REDES SOCIALES-->
                 <div class="row pt-15 mt-15 text-center">
@@ -230,7 +187,6 @@
             </div>
           </div>
           <div class="col-2"></div>    
-        </div>
         <hr>
         <center>
           <!--INICIO CONTACTO-->
@@ -276,6 +232,17 @@
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/main.js"></script>
-    
+      <!--jquery-->
+  <script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous">    
+  </script>
+  <!--fin jquery-->
+  <!--Bootstrap-->
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--Fin Bootstrap-->
+  <script type="text/javascript" src="js/home.js"></script>
   </body>
 </html>
